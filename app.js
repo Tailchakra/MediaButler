@@ -17,7 +17,7 @@ fs.readdir('./commands/', (err, files) => {
   log(`Loading a total of ${files.length} commands.`);
   files.forEach(f => {
     const props = require(`./commands/${f}`);
-    log(`Loading Command: ${props.help.name}. 👌`);
+    log(`Loading Command: ${props.help.name}.`);
     client.commands.set(props.help.name, props);
     props.conf.aliases.forEach(alias => {
       client.aliases.set(alias, props.help.name);
